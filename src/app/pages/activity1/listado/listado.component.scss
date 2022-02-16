@@ -1,0 +1,38 @@
+.tabla-monitores {
+  .cabecera {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-around;
+  }
+
+  .cuerpo {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+
+  /* Columns */
+  .nombre {
+    width: 100px;
+  }
+  .apellido {
+    width: 100px;
+  }
+  .identificacion {
+    width: 150px;
+  }
+  .programa {
+    width: 150px;
+  }
+  .semestre {
+    width: 100px;
+  }
+  .contacto {
+    width: 170px;
+  }
+  .opciones {
+    width: 20px;
+    margin-left: -40px;
+    margin-right: 20px;
+  }
+}

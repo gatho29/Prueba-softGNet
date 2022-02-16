@@ -1,0 +1,51 @@
+<div [formGroup]="monitorForm">
+  <!-- Registro para monitores -->
+  <p class="font-semibold text-2xl text-center mt-4">Registro para monitor</p>
+  <div class="flex flex-col items-center mt-10">
+    <mat-form-field class="text-sm w-4/6 profile_input">
+      <mat-label class="text-sm">Nombres</mat-label>
+      <input formControlName="nombre" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Apellidos</mat-label>
+      <input formControlName="apellido" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Numero de documento</mat-label>
+      <input formControlName="documento" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Programa académico</mat-label>
+      <input formControlName="programa" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Semestre</mat-label>
+      <input formControlName="semestre" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Información de contacto</mat-label>
+      <input formControlName="contacto" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+  </div>
+
+  <!-- Botones de acción -->
+  <div class="flex gap-5 ml-28 mt-5">
+    <button
+      class="bg-blue-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-blue-400 hover:shadow-xl">
+      Crear
+    </button>
+    <button
+      class="bg-orange-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-orange-400 hover:shadow-xl">
+      Actualizar
+    </button>
+    <button
+      class="bg-red-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-red-400 hover:shadow-xl">
+      Cancelar
+    </button>
+  </div>
+</div>

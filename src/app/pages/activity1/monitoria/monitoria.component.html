@@ -1,0 +1,42 @@
+<!-- Registro para monitorias -->
+<div [formGroup]="monitoriaForm">
+  <p class="font-semibold text-2xl text-center mt-4">Registro de monitoria</p>
+  <div class="flex flex-col items-center mt-10">
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Nombre del monitor asignado</mat-label>
+      <input formControlName="monitorAsignado" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Materia</mat-label>
+      <input formControlaName="materia" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Salon</mat-label>
+      <input formControlName="salon" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field class="text-sm w-4/6">
+      <mat-label class="text-sm">Fecha</mat-label>
+      <input formControlName="fecha" matInput class="text-sm" autocomplete="off">
+    </mat-form-field>
+
+  </div>
+  <!-- Botones de acción -->
+  <div class="flex gap-5 ml-28 mt-5">
+    <button
+      class="bg-blue-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-blue-400 hover:shadow-xl">
+      Crear
+    </button>
+    <button
+      class="bg-orange-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-orange-400 hover:shadow-xl">
+      Actualizar
+    </button>
+    <button
+      class="bg-red-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-red-400 hover:shadow-xl">
+      Cancelar
+    </button>
+  </div>
+</div>

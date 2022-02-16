@@ -1,13 +1,13 @@
 <div class="bg-cyan-50 w-full h-screen">
-  <div class="flex h-screen">
+  <div class="flex flex-col h-screen">
     <!-- Sección de img -->
-    <div class="flex flex-col w-3/5 justify-center items-center mt-5">
-      <div class="flex flex-col -mt-20" (click)="registrarMonitor()">
+    <div class="flex justify-center items-center gap-20 mt-10">
+      <div class="flex flex-col -mt-20" (click)="registroMonitor = true; registroMonitoria = false; sinRegistroSeleccionado = false">
         <p class="font-semibold text-2xl text-center">¿Quieres ser monitor academico? registrate aqui</p>
         <img class="mt-3 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
           src="/assets/image/Hagase-Monitor-del-SENA-1.png">
       </div>
-      <div class="flex flex-col mt-10" (click)="registroMonitoria = !registroMonitoria">
+      <div class="flex flex-col mt-10" (click)="registroMonitoria = true; registroMonitor = false; sinRegistroSeleccionado = false">
         <img class="hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
           src="/assets/image/banner_monitoria_621x220_acf_cropped.png">
         <p class="font-semibold text-2xl text-center mt-4">Registra tu monitoria aqui</p>
@@ -15,109 +15,36 @@
 
     </div>
 
-    <!-- Sección de formularios -->
-    <div class="w-2/5 bg-gray-50 pt-20">
+    <div class="bg-gray-50 pt-20 flex h-screen">
 
-      <div *ngIf="registroMonitor">
-        <!-- Registro para monitores -->
-        <p class="font-semibold text-2xl text-center mt-4">Registro para monitor</p>
-        <div class="flex flex-col items-center mt-10">
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Nombres</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Apellidos</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Numero de documento</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Programa académico</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Semestre</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Información de contacto</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
+      <!-- Sección de formularios -->
+      <div class="w-2/5">
+        <div *ngIf="registroMonitor">
+          <app-monitor></app-monitor>
         </div>
 
-        <!-- Botones de acción -->
-        <div class="flex gap-5 ml-32 mt-5">
-          <button
-            class="bg-blue-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-blue-400 hover:shadow-xl">
-            Crear
-          </button>
-          <button
-            class="bg-orange-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-orange-400 hover:shadow-xl">
-            Actualizar
-          </button>
-          <button
-            class="bg-red-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-red-400 hover:shadow-xl"
-            (click)="registroMonitor = !registroMonitor">
-            Cancelar
-          </button>
+        <div *ngIf="registroMonitoria">
+          <app-monitoria></app-monitoria>
         </div>
       </div>
 
-      <!-- Registro para monitorias -->
-      <div *ngIf="registroMonitoria">
-        <p class="font-semibold text-2xl text-center mt-4">Registro de monitoria</p>
-        <div class="flex flex-col items-center mt-10">
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Nombre del monitor asignado</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Materia</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Salon</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
-          <mat-form-field class="text-sm w-4/6">
-            <mat-label class="text-sm">Fecha</mat-label>
-            <input matInput class="text-sm" autocomplete="off">
-          </mat-form-field>
-
+      <!-- Tabla de registro -->
+      <div class="w-4/5 px-4">
+        <div *ngIf="registroMonitor">
+        <p class="font-semibold text-2xl text-center mt-4">Tabla de monitores</p>
+          <app-listado-monitores></app-listado-monitores>
         </div>
-        <!-- Botones de acción -->
-        <div class="flex gap-5 ml-32 mt-5">
-          <button
-            class="bg-blue-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-blue-400 hover:shadow-xl">
-            Crear
-          </button>
-          <button
-            class="bg-orange-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-orange-400 hover:shadow-xl">
-            Actualizar
-          </button>
-          <button
-            class="bg-red-500 text-white font-bold rounded-lg shadow-lg py-2 px-3 transition focus:outline-none hover:bg-red-400 hover:shadow-xl"
-            (click)="registroMonitoria = !registroMonitoria">
-            Cancelar
-          </button>
+
+        <div *ngIf="registroMonitoria">
+        <p class="font-semibold text-2xl text-center mt-4">Tabla de monitorias</p>
+          <app-listado-monitorias></app-listado-monitorias>
         </div>
       </div>
-      <div *ngIf="sinRegistroSeleccionado" class="flex flex-col items-center mt-10">
-        <p class="font-semibold text-2xl text-center mt-4">¿Que registro desea hacer?</p>
-        <img class="mt-5" src="/assets/image/undraw_forgot_password_re_hxwm.svg" width="460">
-      </div>
+    </div>
+
+    <div *ngIf="sinRegistroSeleccionado" class="bg-gray-50 flex flex-col items-center justify-center">
+      <p class="font-semibold text-2xl text-center mt-4">¿Que registro desea hacer?</p>
+      <img class="mt-5" src="/assets/image/undraw_forgot_password_re_hxwm.svg" width="460">
     </div>
   </div>
 </div>

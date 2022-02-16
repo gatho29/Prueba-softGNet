@@ -1,0 +1,39 @@
+<!-- Tabla -->
+<div class="tabla-monitorias">
+  <!-- Cabecera -->
+  <div class="cabecera text-sm border-2 border-opacity-70 p-3 mt-3">
+    <div class="nombre">Monitor asignado</div>
+    <div class="materia">Materia</div>
+    <div class="salon">Salon</div>
+    <div class="fecha">Fecha</div>
+    <div class="opciones"></div>
+  </div>
+
+  <!-- Cuerpo -->
+  <div class="cuerpo border-l-2 border-opacity-70 border-r-2 border-opacity-70 border-b-2 border-opacity-70">
+    <div  class="flex items-center justify-between text-sm border-b-2 border-opacity-70 py-2 p-2">
+      <!-- Nombre monitor asignado -->
+      <div class="font-medium nombre text-center"></div>
+      <!-- materia -->
+      <div class="font-medium materia text-center"></div>
+      <!-- salon -->
+      <div class="font-medium salon"></div>
+      <!-- fecha -->
+      <div class="font-medium fecha"></div>
+      <!-- Opciones -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>clear</mat-icon>
+          <span>Eliminar</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

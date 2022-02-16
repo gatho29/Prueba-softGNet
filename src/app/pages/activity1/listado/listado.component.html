@@ -1,0 +1,45 @@
+<!-- Tabla -->
+<div class="tabla-monitores">
+  <!-- Cabecera -->
+  <div class="cabecera text-sm border-2 border-opacity-70 p-3 mt-3">
+    <div class="nombre">Nombres</div>
+    <div class="apellido">Apellidos</div>
+    <div class="identificacion">Numero de documento</div>
+    <div class="programa">Programa académico</div>
+    <div class="semestre">Semestre</div>
+    <div class="contacto">Información de contacto</div>
+    <div class="opciones"></div>
+  </div>
+
+  <!-- Cuerpo -->
+  <div class="cuerpo border-l-2 border-opacity-70 border-r-2 border-opacity-70 border-b-2 border-opacity-70">
+    <div class="flex items-center justify-between text-sm border-b-2 border-opacity-70 py-2 p-2">
+      <!-- Nombre -->
+      <div class="font-medium nombre text-center"></div>
+      <!-- Apellido -->
+      <div class="font-medium apellido text-center"></div>
+      <!-- identificacion -->
+      <div class="font-medium identificacion"></div>
+      <!-- programa -->
+      <div class="font-medium programa text_resumen cursor-pointer text-blue-500" matTooltip="CARGAR HX PACIENTE"></div>
+      <!-- semestre -->
+      <div class="font-medium semestre"></div>
+      <!-- contacto -->
+      <div class="font-medium contacto text_resumen"></div>
+      <!-- Opciones -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>clear</mat-icon>
+          <span>Eliminar</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

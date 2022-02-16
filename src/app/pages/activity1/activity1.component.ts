@@ -7,21 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Activity1Component implements OnInit {
 
-  registroMonitor = true;
+  registroMonitor = false;
   registroMonitoria = false;
   sinRegistroSeleccionado = true;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  registrarMonitor(): void {
-    if (this.registroMonitor) {
-      this.registroMonitor = true
-      this.registroMonitoria = false;
-    }
-    this.sinRegistroSeleccionado = false;
   }
 
 }
